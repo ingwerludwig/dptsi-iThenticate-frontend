@@ -1,0 +1,12 @@
+.ui-datepicker {
+    z-index: 1234 !important;
+}
+
+.dataTables_wrapper .dataTables_filter {
+    float: left;
+    width: 100%;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    width: 100%;
+}

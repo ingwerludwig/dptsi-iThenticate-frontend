@@ -398,11 +398,10 @@
                 '</div>';
             //noinspection HtmlUnknownAttribute
             tActionDelete = '<button type="button" class="kv-file-remove {removeClass}" ' +
-                'title="{removeTitle}" {dataUrl}{dataKey}>{removeIcon}</button>\n';
-            tActionUpload = '<button type="button" class="kv-file-upload {uploadClass}" title="{uploadTitle}">' +
-                '{uploadIcon}</button>';
-            tActionZoom = '<button type="button" class="kv-file-zoom {zoomClass}" ' +
-                'title="{zoomTitle}">{zoomIcon}</button>';
+                'title="{removeTitle}" {dataUrl}{dataKey}>{removeIcon}<i class="fa fa-trash"></i></button>\n';
+            tActionUpload = '';
+            // tBtnLink = '<a href="{href}" tabindex="500" title="{title}" class="{css}" {status}>{icon} {label}</a>';
+            tActionZoom = '';
             tActionDrag = '<span class="file-drag-handle {dragClass}" title="{dragTitle}">{dragIcon}</span>';
             tTagBef = '<div class="file-preview-frame {frameClass}" id="{previewId}" data-fileindex="{fileindex}"' +
                 ' data-template="{template}"';
@@ -974,7 +973,7 @@
             if (!$modal || !$modal.length) {
                 return;
             }
-            $btnFull = $modal && $modal.find('.btn-fullscreen');
+
             $btnBord = $modal && $modal.find('.btn-borderless');
             if (!$btnFull.length || !$btnBord.length) {
                 return;
@@ -1206,7 +1205,7 @@
                 };
             };
             $modal.on(event + '.bs.modal', function (e) {
-                var $btnFull = $modal.find('.btn-fullscreen'), $btnBord = $modal.find('.btn-borderless');
+              
                 self._raise('filezoom' + event, getParams(e));
                 if (event === 'shown') {
                     $btnBord.removeClass('active').attr('aria-pressed', 'false');
@@ -1315,7 +1314,7 @@
         _setZoomContent: function ($frame, animate) {
             var self = this, $content, tmplt, body, title, $body, $dataEl, config, pid = $frame.attr('id'),
                 $modal = self.$modal, $prev = $modal.find('.btn-prev'), $next = $modal.find('.btn-next'), $tmp,
-                $btnFull = $modal.find('.btn-fullscreen'), $btnBord = $modal.find('.btn-borderless'), cap, size,
+               
                 $btnTogh = $modal.find('.btn-toggleheader'), $zoomPreview = self.$preview.find('#zoom-' + pid);
             tmplt = $zoomPreview.attr('data-template') || 'generic';
             $content = $zoomPreview.find('.kv-file-content');

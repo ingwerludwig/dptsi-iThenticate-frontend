@@ -388,7 +388,7 @@
                 '    <div class="file-footer-caption" title="{caption}">{caption}<br>{size}</div>\n' +
                 '    {progress} {actions}\n' +
                 '</div>';
-            tActions = '<div class="file-upload-indicator" title="{indicatorTitle}">{indicator}</div>\n' +
+            tActions = 
                 '{drag}\n' +
                 '<div class="file-actions">\n' +
                 '    <div class="file-footer-buttons">\n' +
@@ -2556,9 +2556,7 @@
             }
             var icon = 'indicator' + status, msg = icon + 'Title',
                 css = 'file-preview-' + status.toLowerCase(),
-                $indicator = $thumb.find('.file-upload-indicator'),
                 config = self.fileActionSettings;
-            $thumb.removeClass('file-preview-success file-preview-error file-preview-loading');
             if (status === 'Error') {
                 $thumb.find('.kv-file-upload').attr('disabled', true);
             }

@@ -14,5 +14,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard_user');
+});
+
+
+Route::get('/upload', function () {
+    return view('upload');
+});
+
+Route::get('/admin', function () {
+    return view('dashboard_admin');
+});
+
+
+Route::get('/admin/edit_quota', function () {
+    return view('edit_quota');
+});
+
+Route::get('/waiting', function () {
+    return view('admin_waiting');
 });
